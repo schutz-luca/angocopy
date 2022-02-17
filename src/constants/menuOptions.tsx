@@ -1,7 +1,7 @@
 /**
  * IMPORTS
  */
-import { MdHome } from "react-icons/md"
+import { MdCollectionsBookmark, MdHome } from "react-icons/md"
 import { ImBook, ImBooks } from "react-icons/im"
 import { IMenuOption } from "components/topmenu/index.d";
 
@@ -12,7 +12,7 @@ export const menuOptions: IMenuOption[] = [
         link: '/'
     },
     {
-        icon: <ImBook />,
+        icon: <MdCollectionsBookmark />,
         label: 'Cursos',
         link: '/cursos'
     },

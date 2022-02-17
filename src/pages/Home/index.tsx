@@ -6,7 +6,7 @@ import { Button } from "components/button";
 import { Card } from "components/card";
 import { $CardContainer } from "components/card/styles";
 import { Title } from "components/title";
-import { coursesMock } from "./coursesMock";
+import { coursesMock } from "constants/coursesMock";
 import { $Banner, $Divisor, $HomeContainer, $TextContainer } from "./styles";
 
 /**
@@ -15,7 +15,7 @@ import { $Banner, $Divisor, $HomeContainer, $TextContainer } from "./styles";
 export const Home = () => {
 
     return (
-        <$HomeContainer>
+        <>
             <Title
                 title="AngoCursos"
             />
@@ -35,20 +35,22 @@ export const Home = () => {
                 </p>
             </$TextContainer>
             <$Banner src={Banner} alt="banner" />
+            <$Divisor>
+                Cursos em Destaque
+            </$Divisor>
             <$CardContainer style={{ marginTop: 20 }}>
-                <$Divisor>
-                    Cursos em Destaque
-                </$Divisor>
                 {coursesMock.map(course => (
                     <Card
+                        key={course.title}
                         title={course.title}
                         description={course.description}
                         thumbnail={course.thumbnail}
                         actionText="Leia Mais"
+                        rate={course.rate}
                     />
                 ))}
 
             </$CardContainer>
-        </$HomeContainer>
+        </>
     )
 }

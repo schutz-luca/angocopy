@@ -4,12 +4,7 @@
 import styled from "styled-components";
 
 export const $HomeContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+
 `
 
 export const $TextContainer = styled.div`
@@ -18,9 +13,8 @@ export const $TextContainer = styled.div`
     align-items: center;
     flex-direction: column;
     margin: 30px 0;
-    border: 1px solid ${props => props.theme.neutral10};
-    padding: 20px;
     border-radius: 15px;
+    width: 100%;
     h2{
         font-size: 35px;
         margin-bottom: 10px;
@@ -48,10 +42,10 @@ export const $Banner = styled.img`
 `
 
 export const $Divisor = styled.div`
-    text-align: center;
+    text-align: left;
     width: 100%;
-    border-top: 1px solid ${props=>props.theme.neutral10};
-    padding: 20px 0;
+    border-left: 8px solid ${props=>props.theme.secondary};
+    padding: 20px;
     font-size: 26px;
     font-weight: bold;
 `

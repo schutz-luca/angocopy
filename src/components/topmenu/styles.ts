@@ -14,8 +14,7 @@ export const $TopMenuContainer = styled.header`
     top: 0;
     z-index: 3;
     padding: 0;
-    border-bottom: 1px solid ${props=>props.theme.neutral10};
-
+    box-shadow: 0px 8px 30px rgba(0, 5, 58, 0.05);
 `
 
 export const $TopMenuContent = styled.div`
@@ -41,9 +40,9 @@ export const $Logo = styled.img`
 export const $MenuButton = styled(Button)`
     background: transparent;
     border-radius: 50%;
-    color: ${props => props.theme.neutral10};
-    width: 50px;
-    height: 50px;
+    color: ${props => props.theme.neutral7};
+    width: 30px;
+    height: 30px;
     padding: 8px;
 
     &:hover{

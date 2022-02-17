@@ -26,6 +26,7 @@ const colors = {
   secondaryDark: darken('#E20613'),
   red: "#e25656",
   green: "#74c174",
+  yellow: "#fff726",
   ...neutrals
 };
 

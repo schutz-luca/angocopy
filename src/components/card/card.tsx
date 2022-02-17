@@ -2,6 +2,7 @@
  * IMPORTS
  */
 import { Button } from "components/button";
+import { Rating } from "components/rating";
 import { ICardProps } from "./index.d";
 import { $ButtonContainer, $Card, $TextContainer } from "./styles";
 
@@ -15,6 +16,11 @@ export const Card = (props: ICardProps) => (
             <h3>{props.title}</h3>
             <p>{props.description}</p>
         </$TextContainer>
+
+        {props.rate &&
+            <Rating rate={props.rate} />
+        }
+
         {props.actionText &&
             <$ButtonContainer>
                 <Button>
