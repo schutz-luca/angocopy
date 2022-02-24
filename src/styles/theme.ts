@@ -86,7 +86,7 @@ const fonts = {
     bolder: 700,
     medium: 400,
   },
-  primary: '"Poppins", Roboto, sans-serif'
+  primary: '"Roboto Slab", Roboto, sans-serif'
 };
 
 

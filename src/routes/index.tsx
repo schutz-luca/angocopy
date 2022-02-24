@@ -1,21 +1,18 @@
 /**
  * IMPORTS
  */
+import { BrowserRouter } from "react-router-dom";
 import { Routes } from "./routes"
 
 /**
  * I am the routes loader. I pass some config props to routes
  */
-const RoutesLoader = () => {
+const RoutesLoader = () => (
+    <BrowserRouter >
+        <Routes />
+    </BrowserRouter>
 
-    const isLocalhost = import.meta.env.DEV;
-
-    const { pathname } = window.location;
-
-    return (
-        <Routes isLocalhost={isLocalhost} basename={pathname}/>
-    )
-}
+)
 
 /**
  * EXPORTS

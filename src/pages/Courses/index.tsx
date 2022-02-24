@@ -5,6 +5,7 @@ import { Card } from "components/card";
 import { $CardContainer } from "components/card/styles";
 import { Title } from "components/title";
 import { coursesMock } from "constants/coursesMock";
+import { MotionDiv } from "styles/motiondiv";
 
 /**
  * I am the courses page
@@ -12,7 +13,7 @@ import { coursesMock } from "constants/coursesMock";
 export const Courses = () => {
 
     return (
-        <>
+        <MotionDiv>
             <Title
                 title="Cursos"
             />
@@ -29,6 +30,6 @@ export const Courses = () => {
                 ))}
 
             </$CardContainer>
-        </>
+        </MotionDiv>
     )
 }

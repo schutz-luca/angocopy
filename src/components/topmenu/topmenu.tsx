@@ -1,7 +1,7 @@
 /**
  * IMPORTS
  */
-import { MdLogin } from "react-icons/md";
+import { MdLogin, MdLogout } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import LogoWhite from "assets/logo-white.svg";
 import Logo from "assets/logo.svg";
@@ -30,10 +30,20 @@ export const TopMenu = (props: ITopMenuProps) => {
 
                 <$TopMenuOptions >
                     {props.options.map(Option)}
-                    <$MenuOption onClick={logout}>
-                        <MdLogin />
-                        <p>Login</p>
-                    </$MenuOption>
+
+                    {props.signed ?
+                        <$MenuOption onClick={logout}>
+                            <MdLogout />
+                            <p>Logout</p>
+                        </$MenuOption>
+                        :
+                        <NavLink to='login'>
+                            <$MenuOption onClick={logout}>
+                                <MdLogin />
+                                <p>Login</p>
+                            </$MenuOption>
+                        </NavLink>
+                    }
                     <ThemeButton />
                 </$TopMenuOptions>
 

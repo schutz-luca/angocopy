@@ -1,5 +1,6 @@
 export interface ITopMenuProps {
     options: IMenuOptions[]
+    signed?: boolean
 }
 
 export interface IMenuOption{
