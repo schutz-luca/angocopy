@@ -12,6 +12,7 @@ import { Button } from 'components/button';
 import user from "features/user";
 import { schema } from './schema';
 import { $Form, $Join, $JoinContainer } from "./styles";
+import { useHistory } from 'react-router-dom';
 
 /**
  * I am the login page
@@ -24,11 +25,14 @@ export const Login = () => {
 
     const dispatch = useDispatch();
 
-    const onSubmit = (data): void => {
-        dispatch(user.actions.update({
+    const history = useHistory();
+
+    const onSubmit = async (data) => {
+        await dispatch(user.actions.update({
             username: data.username,
             signed: true
-        }))
+        }));
+        history.push('/cursos-comprados');
     };
 
     return (

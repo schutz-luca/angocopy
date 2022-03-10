@@ -14,12 +14,11 @@ export const $DropDown = styled.ul`
 
 export const $DropItem = styled.li`
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     list-style: none;
     cursor: pointer;
     padding: 10px;
-    text-align: center;
 
     p,svg{
         color: ${props => props.theme.neutral10};
@@ -35,6 +34,6 @@ export const $DropItem = styled.li`
 
     svg{
         margin-right: 10px;
-        width: 30px;
+        width: 20px;
     }
 `
