@@ -26,7 +26,7 @@ export const Login = () => {
 
     const onSubmit = (data): void => {
         dispatch(user.actions.update({
-            name: data.username,
+            username: data.username,
             signed: true
         }))
     };

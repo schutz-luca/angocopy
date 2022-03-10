@@ -9,7 +9,7 @@ import { IUserState } from './index.d'
 const initialState: IUserState = {
   id: '',
   email: '',
-  name: '',
+  username: '',
   signed: false,
   role: null,
 }

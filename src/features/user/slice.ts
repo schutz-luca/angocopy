@@ -15,7 +15,7 @@ const slice: Slice<IUserState> = createSlice({
     update: (state, action) => {
       state.id = action.payload.id;
       state.email = action.payload.email;
-      state.name = action.payload.name;
+      state.username = action.payload.username;
       state.signed = action.payload.signed;
       state.role = action.payload.role;
     }

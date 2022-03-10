@@ -63,13 +63,17 @@ export const $MenuOption = styled($MenuButton)`
     padding: 0 8px;
     height: auto;
     width: auto;
+
+    p,svg{
+        color: ${props => props.theme.neutral10}bb;
+    }
     svg{
         padding: 5px 0;
         width: 30px;
         height: 30px;
     }
     p{
-        color: ${props => props.theme.neutral10};
         font-size: 14px;
+        text-transform: capitalize;
     }
 `

@@ -3,8 +3,8 @@
  */
 import Banner from "assets/banner.png";
 import { Button } from "components/button";
-import { Card } from "components/card";
-import { $CardContainer } from "components/card/styles";
+import { CourseCard } from "components/coursecard";
+import { $CardContainer } from "components/coursecard/styles";
 import { Title } from "components/title";
 import { coursesMock } from "constants/coursesMock";
 import { MotionDiv } from "styles/motiondiv";
@@ -41,7 +41,7 @@ export const Home = () => {
             </$Divisor>
             <$CardContainer style={{ marginTop: 20 }}>
                 {coursesMock.map(course => (
-                    <Card
+                    <CourseCard
                         key={course.title}
                         title={course.title}
                         description={course.description}

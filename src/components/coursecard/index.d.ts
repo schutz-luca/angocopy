@@ -1,4 +1,4 @@
-export interface ICardProps {
+export interface ICourseCardProps {
     thumbnail?: string
     title: string
     rate?: number

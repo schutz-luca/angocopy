@@ -15,9 +15,11 @@ export const MainLayout = (props: IMainLayoutProps) => {
 
     const { signed } = useSelector(selectUser);
 
+    const { username } = useSelector(selectUser);
+
     return (
         <$MainLayout>
-            <TopMenu options={menuOptions} signed={signed} />
+            <TopMenu options={menuOptions} signed={signed} username={username} />
             <$MainContent>
                 {props.children}
             </$MainContent>

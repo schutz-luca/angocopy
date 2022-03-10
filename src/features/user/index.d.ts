@@ -3,7 +3,7 @@
  */
 export interface IUserState {
   id: string,
-  name: string,
+  username: string,
   email: string,
   signed: boolean,
   role: RoleEnum | null
