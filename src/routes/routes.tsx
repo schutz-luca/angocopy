@@ -10,6 +10,8 @@ import { Home } from "pages/Home";
 import { Courses } from "pages/Courses";
 import { Login } from "pages/Login";
 import { PurchasedCourses } from "pages/PurchasedCourses";
+import { ViewCourse } from "pages/Courses/view";
+import { ViewPurchasedCourse } from "pages/PurchasedCourses/view";
 
 const Routes = () => {
 
@@ -28,6 +30,8 @@ const Routes = () => {
                 <MainLayout>
                     <Route path="/" exact component={Home} />
                     <Route path="/cursos" exact component={Courses} />
+                    <Route path="/cursos/:id" exact component={ViewCourse} />
+                    <Route path="/cursos-comprados/:id" exact component={ViewPurchasedCourse} />
                     <Route path="/login" exact component={Login} />
                     {signed &&
                         <>

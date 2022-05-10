@@ -24,8 +24,9 @@ export const Courses = () => {
                         title={course.title}
                         description={course.description}
                         thumbnail={course.thumbnail}
-                        actionText="Leia Mais"
                         rate={course.rate}
+                        link={`/cursos/${course.id}`}
+                        actionText="Leia Mais"
                     />
                 ))}
 

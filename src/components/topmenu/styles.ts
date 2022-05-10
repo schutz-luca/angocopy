@@ -40,7 +40,6 @@ export const $Logo = styled.img`
 export const $MenuButton = styled(Button)`
     background: transparent;
     border-radius: 50%;
-    color: ${props => props.theme.neutral7};
     width: 30px;
     height: 30px;
     padding: 8px;
@@ -48,6 +47,19 @@ export const $MenuButton = styled(Button)`
     &:hover{
         background: ${props => props.theme.neutral4}50;
     }
+
+    &[disabled]{
+        background: transparent;
+
+        p,svg{
+            color: ${props => props.theme.neutral6} !important;
+        }
+        
+        &:hover{
+            background: transparent;
+        }
+    }
+
 
     svg{
         height: 100%;

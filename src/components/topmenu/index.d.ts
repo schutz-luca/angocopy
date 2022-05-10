@@ -8,4 +8,5 @@ export interface IMenuOption {
     label: string
     link: string
     icon: JSX.Element
+    disabled?: boolean
 }

@@ -24,8 +24,9 @@
                          title={course.title}
                          description={course.description}
                          thumbnail={course.thumbnail}
-                         actionText="Acessar"
                          rate={course.rate}
+                         link={`/cursos-comprados/${course.id}`}
+                         actionText="Acessar"
                      />
                  ))}
  

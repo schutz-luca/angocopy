@@ -52,9 +52,9 @@ export const Login = () => {
                     Entrar
                 </Button>
             </$Form>
-            <$JoinContainer>
+            {/* <$JoinContainer>
                 Ainda não tem conta? <$Join to="join">Cadastre-se</$Join>
-            </$JoinContainer>
+            </$JoinContainer> */}
         </MotionDiv>
     )
 }

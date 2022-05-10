@@ -7,6 +7,7 @@ import { CourseCard } from "components/coursecard";
 import { $CardContainer } from "components/coursecard/styles";
 import { Title } from "components/title";
 import { coursesMock } from "constants/coursesMock";
+import { NavLink } from "react-router-dom";
 import { MotionDiv } from "styles/motiondiv";
 import { $Banner, $Divisor, $HomeContainer, $TextContainer } from "./styles";
 
@@ -23,13 +24,17 @@ export const Home = () => {
             <$TextContainer>
                 <h2>Escola online <b>à custo Justo</b></h2>
                 <div>
-                    <Button>
+                    {/* <NavLink to={"/planos"}> */}
+                    <Button disabled={true}>
                         Assine um Plano
                     </Button>
+                    {/* </NavLink> */}
                     ou
-                    <Button>
-                        Compre Cursos
-                    </Button>
+                    <NavLink to={"/cursos"}>
+                        <Button>
+                            Compre Cursos
+                        </Button>
+                    </NavLink>
                 </div>
                 <p>
                     Nossa plataforma reúne diversos cursos para garantir melhor experiência no seu aprendizado
@@ -46,8 +51,9 @@ export const Home = () => {
                         title={course.title}
                         description={course.description}
                         thumbnail={course.thumbnail}
-                        actionText="Leia Mais"
                         rate={course.rate}
+                        link={`/cursos/${course.id}`}
+                        actionText="Leia Mais"
                     />
                 ))}
 

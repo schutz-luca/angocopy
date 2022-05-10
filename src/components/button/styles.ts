@@ -10,7 +10,7 @@ import styled from 'styled-components';
  */
 const $Button = styled.button`
   background: ${props => props.theme.primary};
-  border-radius: 15px;
+  border-radius: 10px;
   font-size: 16px;
   text-transform: uppercase;
   padding: 0.8rem 2rem;
@@ -19,7 +19,9 @@ const $Button = styled.button`
 
   &[disabled] {
     cursor: default;
-    background: ${props => props.theme.colors.gray3};
+    background: ${props => props.theme.colors.gray2};
+    filter: none;
+    color: ${props => props.theme.colors.white3}AA;
   }
 `;
 
