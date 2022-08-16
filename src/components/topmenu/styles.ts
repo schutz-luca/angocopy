@@ -76,6 +76,12 @@ export const $MenuOption = styled($MenuButton)`
     height: auto;
     width: auto;
 
+    &.userOption{
+        p{
+            text-transform: none;
+        }
+    }
+
     p,svg{
         color: ${props => props.theme.neutral10}bb;
     }

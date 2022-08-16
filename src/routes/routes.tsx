@@ -8,6 +8,7 @@ import { selectUser } from "features/user/selectors";
 import { MainLayout } from "layouts/MainLayout";
 import { Home } from "pages/Home";
 import { Courses } from "pages/Courses";
+import { Join } from "pages/Join";
 import { Login } from "pages/Login";
 import { PurchasedCourses } from "pages/PurchasedCourses";
 import { ViewCourse } from "pages/Courses/view";
@@ -33,6 +34,7 @@ const Routes = () => {
                     <Route path="/cursos/:id" exact component={ViewCourse} />
                     <Route path="/cursos-comprados/:id" exact component={ViewPurchasedCourse} />
                     <Route path="/login" exact component={Login} />
+                    <Route path="/cadastro" exact component={Join} />
                     {signed &&
                         <>
                             <Route path="/cursos-comprados" exact component={PurchasedCourses} />

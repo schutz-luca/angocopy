@@ -1,6 +1,7 @@
 /**
  * IMPORTS
  */
+import { Footer } from "components/footer";
 import { TopMenu } from "components/topmenu";
 import { menuOptions } from "constants/menuOptions";
 import { selectUser } from "features/user/selectors";
@@ -23,6 +24,7 @@ export const MainLayout = (props: IMainLayoutProps) => {
             <$MainContent>
                 {props.children}
             </$MainContent>
+            <Footer />
         </$MainLayout>
     )
 }
