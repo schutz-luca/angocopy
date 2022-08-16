@@ -44,7 +44,11 @@ const BaseInput = (props: IProps): React.ReactElement => {
     <$Input >
       {props.icon && <$Icon className={props.icon && 'icon'}><Icon /></$Icon>}
 
-      <input {...props} type={type} ref={props.innerRef} />
+      {props?.multiline ?
+        <textarea {...props} ref={props.innerRef} />
+        :
+        <input {...props} type={type} ref={props.innerRef} />
+      }
 
       {passwordIcon()}
     </$Input>

@@ -10,6 +10,8 @@ export const $DropDown = styled.ul`
     border-radius: 0 0 15px 15px;
     box-shadow:0 2px 3px ${props => props.theme.colors.black}40;
     overflow: hidden;
+    width: 100%;
+    top: 50px;
 `
 
 export const $DropItem = styled.li`

@@ -15,7 +15,7 @@ export const UserButton = (props: IUserButtonProps) => {
 
     return (
         <$UserButtonContainer>
-            <$MenuOption onClick={handleClick}>
+            <$MenuOption onClick={handleClick} className="userOption">
                 <MdPerson />
                 <p>{props.username ? props.username : 'Meu Perfil'}</p>
             </$MenuOption>

@@ -50,13 +50,13 @@ const $Input = styled.div`
   }
 
   [data-has-error="true"] & {
-    input {
+    input, textarea {
       border-color: ${props => props.theme.colors.red};
       color: ${props => props.theme.colors.red}
     }
   }
 
-  input {
+  input, textarea {
     height: 40px;
     border: none;
     border-radius: inherit;
@@ -64,6 +64,9 @@ const $Input = styled.div`
     outline: none;
     padding: 8px 0;
     width: 100%;
+  }
+  textarea{
+    height: unset;
   }
 
   input:-webkit-autofill {
