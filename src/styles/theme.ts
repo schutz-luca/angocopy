@@ -44,20 +44,20 @@ const darkNeutrals = {
   neutral8: neutrals.white,
   neutral9: neutrals.white2,
   neutral10: neutrals.white3,
-  background: neutrals.black2
+  background: neutrals.black
 }
 
 const lightNeutrals = {
-  neutral: invert(neutrals.black),
-  neutral2: invert(neutrals.black2),
-  neutral3: invert(neutrals.black3),
-  neutral4: invert(neutrals.black4),
-  neutral5: invert(neutrals.gray),
-  neutral6: invert(neutrals.gray2),
-  neutral7: invert(neutrals.gray3),
-  neutral8: invert(neutrals.white),
-  neutral9: invert(neutrals.white2),
-  neutral10: invert(neutrals.white3),
+  neutral10: neutrals.black,
+  neutral9: neutrals.black2,
+  neutral8: neutrals.black3,
+  neutral7: neutrals.black4,
+  neutral6: neutrals.gray,
+  neutral5: neutrals.gray2,
+  neutral4: neutrals.gray3,
+  neutral3: neutrals.white,
+  neutral2: neutrals.white2,
+  neutral: neutrals.white3,
   background: neutrals.white3
 }
 

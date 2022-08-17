@@ -5,7 +5,7 @@ export const $Form = styled.form`
     display: flex;
     align-items: stretch;
     flex-direction: column;
-    width: 30%;
+    width: 40%;
     margin-top: 2rem;
 
     @media ${devices.laptopL}{

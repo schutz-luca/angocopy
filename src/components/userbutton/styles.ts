@@ -6,12 +6,13 @@ export const $UserButtonContainer = styled.div`
 
 export const $DropDown = styled.ul`
     position: absolute;
-    background: ${props => props.theme.neutral2};
+    background: ${props => props.theme.neutral};
     border-radius: 0 0 15px 15px;
     box-shadow:0 2px 3px ${props => props.theme.colors.black}40;
     overflow: hidden;
     width: 100%;
-    top: 50px;
+    min-width: 200px;
+    top: 48px;
 `
 
 export const $DropItem = styled.li`
