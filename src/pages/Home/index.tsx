@@ -1,22 +1,21 @@
 /**
  * IMPORTS
  */
+import { yupResolver } from "@hookform/resolvers/yup";
+import { NavLink } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import Banner from "assets/banner.png";
 import { Button } from "components/button";
 import { CourseCard } from "components/coursecard";
 import { $CardContainer } from "components/coursecard/styles";
-import { Title } from "components/title";
-import { coursesMock } from "constants/coursesMock";
-import { NavLink } from "react-router-dom";
-import { MotionDiv } from "styles/motiondiv";
-import { $Banner, $Divisor, $HomeContainer, $TextContainer } from "./styles";
-import { $Form } from "../Join/styles";
-import { schema } from "./schema";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { $Form } from "components/form/styles";
 import { Field } from "components/form/field";
 import { Input } from "components/form/input";
-import { Row } from "components/form/row";
+import { Title } from "components/title";
+import { coursesMock } from "constants/coursesMock";
+import { MotionDiv } from "styles/motiondiv";
+import { schema } from "./schema";
+import { $Banner, $Divisor, $TextContainer } from "./styles";
 
 /**
  * I am the home page

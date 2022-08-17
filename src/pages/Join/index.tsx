@@ -11,6 +11,7 @@ import { Button } from 'components/button';
 import { Field } from 'components/form/field';
 import { Input } from 'components/form/input';
 import { Select } from 'components/form/select';
+import { $Form } from 'components/form/styles';
 import { Row } from 'components/form/row';
 import { Title } from "components/title";
 import user from 'features/user';
@@ -18,7 +19,6 @@ import http from 'infra/http';
 import { notify } from 'infra/notify';
 import { selectIsLoading } from 'features/notify/selectors';
 import { schema } from './schema';
-import { $Form } from "./styles";
 
 /**
  * I am the join page

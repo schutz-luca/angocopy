@@ -86,7 +86,7 @@ const fonts = {
     bolder: 700,
     medium: 400,
   },
-  primary: '"Roboto", Roboto, sans-serif'
+  primary: '"Raleway", Roboto, sans-serif'
 };
 
 

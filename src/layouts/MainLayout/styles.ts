@@ -5,12 +5,11 @@ import styled from "styled-components";
 
 export const $MainLayout = styled.div`
     height: 100vh;
-`
-
-export  const $MainContent = styled.div`
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+`
+
+export const $MainContent = styled.div`
+    padding: 40px 20px;
+    flex-grow: 1;
 `

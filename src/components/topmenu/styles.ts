@@ -24,7 +24,7 @@ export const $TopMenuContent = styled.div`
     align-items: center;
     width: 100%;
     margin: auto;
-    padding: 0 200px;
+    padding: 7px 200px;
 `
 
 export const $TopMenuOptions = styled.div`

@@ -5,7 +5,7 @@ export const $Footer = styled.footer`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-top: solid 1px ${props => props.theme.neutral10};
+    border-top: solid 1px ${props => props.theme.neutral6};
     background: ${props => props.theme.background};
     padding: 30px;
     margin-top: 30px;

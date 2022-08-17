@@ -7,11 +7,12 @@ import { useForm } from 'react-hook-form';
 import { MotionDiv } from 'styles/motiondiv';
 import { Field } from 'components/form/field';
 import { Input } from 'components/form/input';
+import { $Form } from 'components/form/styles';
 import { Title } from "components/title";
 import { Button } from 'components/button';
 import user from "features/user";
 import { schema } from './schema';
-import { $Form, $Join, $JoinContainer } from "./styles";
+import {  $Join, $JoinContainer } from "./styles";
 import { useHistory } from 'react-router-dom';
 
 /**
