@@ -52,7 +52,7 @@ export const $MenuButton = styled(Button)`
         background: transparent;
 
         p,svg{
-            color: ${props => props.theme.neutral6} !important;
+            color: ${props => props.theme.neutral4} !important;
         }
         
         &:hover{
