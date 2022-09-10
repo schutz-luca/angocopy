@@ -1,0 +1,1 @@
+export { CourseCategory } from "./coursecategory";

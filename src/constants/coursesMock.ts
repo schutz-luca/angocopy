@@ -63,7 +63,7 @@ export const coursesMock = [
         id: "5",
         title: "Flutter: Crie um app com armazenamento interno",
         description: "Conheça as possibilidades comuns para armazenamento interno com o Flutter",
-        thumbnail: "https://hugocursos.com.br/img/pacotes/pacotao-de-cursos-de-flutter.jpg",
+        thumbnail: "https://blog.gft.com/br/wp-content/uploads/sites/4/2021/05/1.jpg",
         teacher: {
             id: "1",
             name: "John Doe"

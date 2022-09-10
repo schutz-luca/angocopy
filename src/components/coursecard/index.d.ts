@@ -1,7 +1,7 @@
+import { ICourseFull } from "types/course"
+
 export interface ICourseCardProps {
-    thumbnail?: string
-    title: string
-    rate?: number
+    course: ICourseFull
     description?: string
     actionText?: string
     link?: string

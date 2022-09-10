@@ -13,8 +13,8 @@ export const menuOptions: IMenuOption[] = [
     },
     {
         icon: <MdCollectionsBookmark />,
-        label: 'Cursos',
-        link: '/cursos'
+        label: 'Categorias',
+        link: '/categorias'
     },
     {
         icon: <ImBooks />,

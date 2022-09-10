@@ -2,20 +2,27 @@
  * IMPORTS
  */
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
 import Banner from "assets/banner.png";
 import { Button } from "components/button";
 import { CourseCard } from "components/coursecard";
 import { $CardContainer } from "components/coursecard/styles";
+import { Divisor } from "components/divisor";
 import { $Form } from "components/form/styles";
 import { Field } from "components/form/field";
 import { Input } from "components/form/input";
 import { Title } from "components/title";
-import { coursesMock } from "constants/coursesMock";
+import { Loading } from "components/loading";
+import { selectIsLoading } from "features/notify/selectors";
+import { notify } from "infra/notify";
+import http from "infra/http";
 import { MotionDiv } from "styles/motiondiv";
+import { ICourseFull } from "types/course";
+import { $Banner, $TextContainer } from "./styles";
 import { schema } from "./schema";
-import { $Banner, $Divisor, $TextContainer } from "./styles";
 
 /**
  * I am the home page
@@ -29,6 +36,32 @@ export const Home = () => {
     const onSubmitContact = (data) => {
         window.open(`mailto:test@example.com?subject=Contato de ${data.name}&body=${data.message}`);
     }
+
+    const [courses, setCourses] = useState<ICourseFull[]>([]);
+
+    const dispatch = useDispatch();
+
+    const isLoading = useSelector(selectIsLoading);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const response = await http.get('cursos', { dispatch });
+
+                if (response?.status !== 200)
+                    throw Error
+
+                setCourses(response.data);
+            }
+            catch (error) {
+                notify({
+                    title: "Não foi possível resgatar as categorias de curso",
+                    message: import.meta.env.VITE_GENERIC_ERROR,
+                    type: "danger"
+                });
+            }
+        })()
+    }, [])
 
     return (
         <MotionDiv>
@@ -44,7 +77,7 @@ export const Home = () => {
                     </Button>
                     {/* </NavLink> */}
                     ou
-                    <NavLink to={"/cursos"}>
+                    <NavLink to={"/categorias"}>
                         <Button>
                             Compre Cursos
                         </Button>
@@ -55,26 +88,30 @@ export const Home = () => {
                 </p>
             </$TextContainer>
             <$Banner src={Banner} alt="banner" />
-            <$Divisor>
+            <Divisor>
                 Cursos em Destaque
-            </$Divisor>
+            </Divisor>
             <$CardContainer style={{ marginTop: 20 }}>
-                {coursesMock.map(course => (
-                    <CourseCard
-                        key={course.title}
-                        title={course.title}
-                        description={course.description}
-                        thumbnail={course.thumbnail}
-                        rate={course.rate}
-                        link={`/cursos/${course.id}`}
-                        actionText="Leia Mais"
-                    />
-                ))}
+                {isLoading ?
+                    <Loading />
+                    :
+                    <>
+                        {
+                            courses.map(course => (
+                                <CourseCard
+                                    course={course}
+                                    link={`/cursos/${course.curso.id}`}
+                                    actionText="Leia Mais"
+                                />
+                            ))
+                        }
+                    </>
+                }
             </$CardContainer>
 
-            <$Divisor>
+            <Divisor>
                 Contato
-            </$Divisor>
+            </Divisor>
             <$Form onSubmit={handleSubmit(onSubmitContact)}>
                 <Field error={errors.name?.message} label="Nome Completo">
                     <Input name="name" innerRef={register} />

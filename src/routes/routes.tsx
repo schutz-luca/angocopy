@@ -30,15 +30,18 @@ const Routes = () => {
             >
                 <MainLayout>
                     <Route path="/" exact component={Home} />
-                    <Route path="/cursos" exact component={Courses} />
+                    <Route path="/categorias" exact component={Courses} />
                     <Route path="/cursos/:id" exact component={ViewCourse} />
-                    <Route path="/cursos-comprados/:id" exact component={ViewPurchasedCourse} />
-                    <Route path="/login" exact component={Login} />
-                    <Route path="/cadastro" exact component={Join} />
-                    {signed &&
+                    {signed ?
                         <>
                             <Route path="/cursos-comprados" exact component={PurchasedCourses} />
 
+                        </>
+                        :
+                        <>
+                            <Route path="/cursos-comprados/:id" exact component={ViewPurchasedCourse} />
+                            <Route path="/login" exact component={Login} />
+                            <Route path="/cadastro" exact component={Join} />
                         </>
                     }
                 </MainLayout>

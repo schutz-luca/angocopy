@@ -1,4 +1,5 @@
 export interface ICategory {
     id: string
-    name: string
+    categoria: string
+    quantidade_cursos: number
 }

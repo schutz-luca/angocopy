@@ -13,6 +13,7 @@ export const $Card = styled.div`
     color: ${props => props.theme.neutral10};
     overflow: hidden;
     box-shadow:0 2px 3px ${props => props.theme.colors.black}40;
+    padding-bottom: 10px;
 
     transition: all ease-in-out 0.3s;
     cursor: pointer;
