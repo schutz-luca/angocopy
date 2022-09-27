@@ -11,18 +11,18 @@ import { $CloseContainer, $Modal, $ModalBackground, $ModalContainer } from "./st
 export const Modal = (props: IModalProps) => {
 
     const closeModal = () => {
-        props.setIsOpen(false);
+        props.setOpen(false);
     }
 
     return (
         <AnimatePresence exitBeforeEnter>
             <motion.div
-                key={props.isOpen as unknown as string}
+                key={props.open as unknown as string}
                 initial="initial"
                 animate="animate"
                 exit="exit"
             >
-                {props.isOpen &&
+                {props.open &&
                     <$ModalContainer variants={variants} >
                         <$Modal>
                             <$CloseContainer>

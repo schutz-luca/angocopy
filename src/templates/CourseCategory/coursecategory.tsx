@@ -25,17 +25,12 @@ export const CourseCategory = ({ category }: ICourseCategoryProps) => {
             try {
                 const response = await http.post(`categoria/cursos`, { dispatch, body: { categoria_id: category.id } });
 
-                if (response?.status !== 200)
+                if (!response?.length)
                     throw Error
 
-                setCourses(response.data.cursos);
+                setCourses(response.cursos);
             }
             catch (error) {
-                notify({
-                    title: "Não foi possível resgatar as categorias de curso",
-                    message: import.meta.env.VITE_GENERIC_ERROR,
-                    type: "danger"
-                });
             }
         })()
     }, [])
@@ -43,7 +38,7 @@ export const CourseCategory = ({ category }: ICourseCategoryProps) => {
     return (
         <$CategorySection>
             <Divisor>
-                {category.categoria}
+                {category?.categoria}
             </Divisor>
             <$CardContainer>
                 {isLoading ?

@@ -48,12 +48,13 @@ export const Home = () => {
             try {
                 const response = await http.get('cursos', { dispatch });
 
-                if (response?.status !== 200)
+                if (!response?.length)
                     throw Error
 
-                setCourses(response.data);
+                setCourses(response);
             }
             catch (error) {
+                console.log(error);
                 notify({
                     title: "Não foi possível resgatar as categorias de curso",
                     message: import.meta.env.VITE_GENERIC_ERROR,

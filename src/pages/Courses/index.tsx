@@ -1,10 +1,7 @@
 /**
  * IMPORTS
  */
-import { CourseCard } from "components/coursecard";
-import { $CardContainer } from "components/coursecard/styles";
 import { Title } from "components/title";
-import { coursesMock } from "constants/coursesMock";
 import http from "infra/http";
 import { notify } from "infra/notify";
 import { useState, useEffect } from "react";
@@ -27,17 +24,13 @@ export const Courses = () => {
             try {
                 const response = await http.get('categoria/cursos', { dispatch });
 
-                if (response?.status !== 200)
+                if (!response?.length)
                     throw Error
 
-                setCategories(response.data);
+                setCategories(response);
             }
             catch (error) {
-                notify({
-                    title: "Não foi possível resgatar as categorias de curso",
-                    message: import.meta.env.VITE_GENERIC_ERROR,
-                    type: "danger"
-                });
+                console.error(error)
             }
         })()
     }, [])

@@ -28,10 +28,10 @@ export const PurchasedCourses = () => {
             try {
                 const response = await http.get('cursos', { dispatch });
 
-                if (response?.status !== 200)
+                if (!response?.length)
                     throw Error
 
-                setCourses(response.data);
+                setCourses(response);
             }
             catch (error) {
                 notify({

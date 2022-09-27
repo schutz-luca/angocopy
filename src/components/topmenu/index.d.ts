@@ -6,7 +6,8 @@ export interface ITopMenuProps {
 
 export interface IMenuOption {
     label: string
-    link: string
-    icon: JSX.Element
+    link?: string
+    icon?: JSX.Element
     disabled?: boolean
+    submenu?: IMenuOption[]
 }

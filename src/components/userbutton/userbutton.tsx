@@ -10,8 +10,8 @@ export const UserButton = (props: IUserButtonProps) => {
 
     const logout = useLogout();
 
-    const [isOpen, setIsOpen] = useState(false);
-    const handleClick = () => setIsOpen(!isOpen);
+    const [open, setOpen] = useState(false);
+    const handleClick = () => setOpen(!open);
 
     return (
         <$UserButtonContainer>
@@ -19,7 +19,7 @@ export const UserButton = (props: IUserButtonProps) => {
                 <MdPerson />
                 <p>{props.username ? props.username : 'Meu Perfil'}</p>
             </$MenuOption>
-            {isOpen &&
+            {open &&
                 <$DropDown>
                     {props.options.map(option =>
                         <>

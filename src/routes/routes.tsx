@@ -13,6 +13,7 @@ import { Login } from "pages/Login";
 import { PurchasedCourses } from "pages/PurchasedCourses";
 import { ViewCourse } from "pages/Courses/view";
 import { ViewPurchasedCourse } from "pages/PurchasedCourses/view";
+import { Category } from "pages/Category";
 
 const Routes = () => {
 
@@ -31,6 +32,7 @@ const Routes = () => {
                 <MainLayout>
                     <Route path="/" exact component={Home} />
                     <Route path="/categorias" exact component={Courses} />
+                    <Route path="/categorias/:id" exact component={Category} />
                     <Route path="/cursos/:id" exact component={ViewCourse} />
                     {signed ?
                         <>

@@ -84,10 +84,10 @@ export const Join = () => {
             try {
                 const response = await http.get('provincias', { dispatch });
 
-                if (response?.status !== 200)
+                if (!response?.length)
                     throw Error
 
-                const states = response.data.map(item => ({
+                const states = response.map(item => ({
                     value: item.provincia.id,
                     name: item.provincia.provincia
                 }));

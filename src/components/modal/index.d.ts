@@ -5,6 +5,6 @@ import { ReactNode } from "react";
 
 export interface IModalProps {
     children: ReactNode
-    isOpen: boolean
-    setIsOpen: (boolean) => void
+    open: boolean
+    setOpen: (boolean) => void
 }
