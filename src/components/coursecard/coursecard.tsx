@@ -19,7 +19,6 @@ export const CourseCard = ({ course, ...props }: ICourseCardProps) => {
 
     const goToCourse = () => push(props.link)
 
-    console.log(course)
     return (
         <Card>
             <img src={course.curso.capa ? course.curso.capa : ImageIcon} alt={course.curso.curso} />

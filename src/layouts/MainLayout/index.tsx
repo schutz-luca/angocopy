@@ -75,8 +75,7 @@ export const MainLayout = (props: IMainLayoutProps) => {
         {
             icon: <ImBooks />,
             label: 'Planos',
-            link: '/planos',
-            disabled: true
+            link: '/planos'
         }
     ]
 

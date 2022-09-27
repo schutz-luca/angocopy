@@ -19,7 +19,6 @@ export const menuOptions: IMenuOption[] = [
     {
         icon: <ImBooks />,
         label: 'Planos',
-        link: '/planos',
-        disabled: true
+        link: '/planos'
     }
 ]

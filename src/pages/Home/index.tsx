@@ -72,11 +72,11 @@ export const Home = () => {
             <$TextContainer>
                 <h2>Escola online <b>à custo Justo</b></h2>
                 <div>
-                    {/* <NavLink to={"/planos"}> */}
-                    <Button disabled={true}>
-                        Assine um Plano
-                    </Button>
-                    {/* </NavLink> */}
+                    <NavLink to={"/planos"}>
+                        <Button >
+                            Assine um Plano
+                        </Button>
+                    </NavLink>
                     ou
                     <NavLink to={"/categorias"}>
                         <Button>
