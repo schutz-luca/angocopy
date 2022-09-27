@@ -54,12 +54,7 @@ export const Home = () => {
                 setCourses(response);
             }
             catch (error) {
-                console.log(error);
-                notify({
-                    title: "Não foi possível resgatar as categorias de curso",
-                    message: import.meta.env.VITE_GENERIC_ERROR,
-                    type: "danger"
-                });
+                console.error(error);
             }
         })()
     }, [])

@@ -70,7 +70,8 @@ export const MainLayout = (props: IMainLayoutProps) => {
         {
             icon: <MdCollectionsBookmark />,
             label: 'Categorias',
-            submenu: categorySubmenu
+            submenu: categorySubmenu,
+            disabled: !categorySubmenu?.length
         },
         {
             icon: <ImBooks />,
