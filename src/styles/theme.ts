@@ -22,11 +22,12 @@ const neutrals = {
 const colors = {
   primary: '#1D70B7',
   primaryDark: darken(0.1, '#1D70B7'),
-  secondary: '#E20613',
-  secondaryDark: darken('#E20613'),
+  secondary: '#ec343f',
+  secondaryDark: darken(0.1, '#ec343f'),
   red: "#e25656",
   green: "#74c174",
   yellow: "#f7e331",
+  darkBlue: "#141d38",
   ...neutrals
 };
 

@@ -9,7 +9,9 @@ export const $Title = styled.div`
     text-align: center;
     font-size: 34px;
     font-weight: 600;
-    color: ${props => props.theme.neutral9};
+    color: ${props => props.theme.neutral10};
+    text-transform: uppercase;
+    margin-top: 40px;
     @media ${devices.desktop}{
         font-size: 28px;
     }

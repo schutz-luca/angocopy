@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import Banner from "assets/banner.png";
+import Banner from "assets/banner.jpg";
 import { Button } from "components/button";
 import { CourseCard } from "components/coursecard";
 import { $CardContainer } from "components/coursecard/styles";
@@ -15,13 +15,14 @@ import { $Form } from "components/form/styles";
 import { Field } from "components/form/field";
 import { Input } from "components/form/input";
 import { Title } from "components/title";
+import Logo from "assets/logo-white.svg";
 import { Loading } from "components/loading";
 import { selectIsLoading } from "features/notify/selectors";
 import { notify } from "infra/notify";
 import http from "infra/http";
 import { MotionDiv } from "styles/motiondiv";
 import { ICourseFull } from "types/course";
-import { $Banner, $TextContainer } from "./styles";
+import { $Banner, $TextContainer, $Logo } from "./styles";
 import { schema } from "./schema";
 
 /**
@@ -61,29 +62,30 @@ export const Home = () => {
 
     return (
         <MotionDiv>
-            <Title
-                title="AngoCursos"
-            />
-            <$TextContainer>
-                <h2>Escola online <b>à custo Justo</b></h2>
-                <div>
-                    <NavLink to={"/planos"}>
-                        <Button >
-                            Assine um Plano
-                        </Button>
-                    </NavLink>
-                    ou
-                    <NavLink to={"/categorias"}>
-                        <Button>
-                            Compre Cursos
-                        </Button>
-                    </NavLink>
-                </div>
-                <p>
-                    Nossa plataforma reúne diversos cursos para garantir melhor experiência no seu aprendizado
-                </p>
-            </$TextContainer>
-            <$Banner src={Banner} alt="banner" />
+            <$Banner>
+                <$TextContainer>
+                    <p>AngoCursos</p>
+                    <h2>Escola online à custo Justo</h2>
+                    <p>
+                        Nossa plataforma reúne diversos cursos para garantir melhor experiência no seu aprendizado!
+                    </p>
+                    <div>
+                        <NavLink to={"/planos"}>
+                            <Button className="red">
+                                Assine um Plano
+                            </Button>
+                        </NavLink>
+                        <b><p>ou</p></b>
+                        <NavLink to={"/categorias"}>
+                            <Button>
+                                Compre Cursos
+                            </Button>
+                        </NavLink>
+                    </div>
+                </$TextContainer>
+                <img className="banner" src={Banner} alt="AngoCursos" />
+            </$Banner>
+
             <Divisor>
                 Cursos em Destaque
             </Divisor>

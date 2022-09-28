@@ -6,7 +6,7 @@ import { Button } from "components/button";
 
 export const $ThemeButton = styled(Button)`
     border-radius: 50%;
-    background: ${props => props.theme.neutral8};
+    background: ${props => props.theme.neutral10}90;
     color: ${props => props.theme.neutral};
     position: absolute;
     z-index: 2;

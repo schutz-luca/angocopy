@@ -2,6 +2,7 @@
  * IMPORTS
  */
 import { MdLogin, MdLogout, MdPerson } from "react-icons/md";
+import { BiUserPlus } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import LogoWhite from "assets/logo-white.svg";
@@ -50,20 +51,30 @@ export const TopMenu = (props: ITopMenuProps) => {
         <$TopMenuContainer>
             <$TopMenuContent>
 
-                <NavLink to="/"><$Logo src={isDarkTheme ? LogoWhite : Logo} alt="logo" /></NavLink>
+                <NavLink to="/"><$Logo src={LogoWhite} alt="logo" /></NavLink>
 
                 <$TopMenuOptions >
                     {props.options.map(Option)}
 
                     {props.signed ?
-                        <DropDown component={<UserButton />} options={signedOptions} open={open} />
+                        <$MenuOption className="hightlight">
+                            <DropDown component={<UserButton />} options={signedOptions} open={open} />
+                        </$MenuOption>
                         :
-                        <NavLink to='login'>
-                            <$MenuOption onClick={logout}>
-                                <MdLogin />
-                                <p>Login</p>
-                            </$MenuOption>
-                        </NavLink>
+                        <>
+                            <NavLink to='login'>
+                                <$MenuOption>
+                                    <MdLogin />
+                                    <p>Login</p>
+                                </$MenuOption>
+                            </NavLink>
+                            <NavLink to='cadastro'>
+                                <$MenuOption className="highlight">
+                                    <BiUserPlus />
+                                    <p>Cadastre-se</p>
+                                </$MenuOption>
+                            </NavLink>
+                        </>
                     }
                     <ThemeButton />
                 </$TopMenuOptions>

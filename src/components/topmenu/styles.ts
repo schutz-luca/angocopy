@@ -9,8 +9,7 @@ export const $TopMenuContainer = styled.header`
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 70px;
-    background-color: ${props => props.theme.background};
+    background-color: ${props => props.theme.colors.darkBlue};
     top: 0;
     z-index: 3;
     padding: 0;
@@ -20,45 +19,31 @@ export const $TopMenuContainer = styled.header`
 export const $TopMenuContent = styled.div`
     display: flex;
     flex-grow: 1;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
     margin: auto;
     padding: 7px 200px;
 `
 
-export const $TopMenuOptions = styled.div`
+export const $TopMenuOptions = styled.ul`
     display: flex;
     justify-content: space-between;
     align-items: center;
 `
 
 export const $Logo = styled.img`
-    height: 55px;
+    height: 60px;
+    margin: 5px 0;
 `
 
-export const $MenuButton = styled(Button)`
+export const $MenuButton = styled.div`
     background: transparent;
     border-radius: 50%;
     width: 30px;
     height: 30px;
     padding: 8px;
 
-    &:hover{
-        background: ${props => props.theme.neutral4}50;
-    }
-
-    &[disabled]{
-        background: transparent;
-
-        p,svg{
-            color: ${props => props.theme.neutral4} !important;
-        }
-        
-        &:hover{
-            background: transparent;
-        }
-    }
 
 
     svg{
@@ -67,23 +52,26 @@ export const $MenuButton = styled(Button)`
     }
 `
 
-export const $MenuOption = styled($MenuButton)`
+export const $MenuOption = styled.li`
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    padding: 0 8px;
-    height: auto;
+    padding: 0 14px;
+    height: 18px;
     width: auto;
 
-    &.userOption{
-        p{
-            text-transform: none;
+    cursor: pointer;
+
+    &:hover{
+        p,svg{
+            color: ${props => props.theme.secondary};
         }
     }
 
     p,svg{
-        color: ${props => props.theme.neutral10}bb;
+        color: ${props => props.theme.colors.white3};
+        transition: all ease-in-out 0.2s;
     }
     svg{
         padding: 5px 0;
@@ -91,7 +79,41 @@ export const $MenuOption = styled($MenuButton)`
         height: 30px;
     }
     p{
-        font-size: 14px;
-        text-transform: capitalize;
+        font-size: .9rem;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+
+        svg{
+            width: 16px;
+            margin-left: 3px;
+            margin-top: -2px;
+        }
     }
+
+    &.disabled{
+        background: transparent;
+
+        p,svg{
+            opacity: 0.7;
+        }
+        
+        &:hover{
+            background: transparent;
+        }
+    }
+
+    &.userOption{
+        height: 15px;
+        p{
+            text-transform: none;
+        }
+    }
+
+    &.highlight{
+        border: 2px solid ${props => props.theme.secondary};
+        margin: 0 10px;
+        padding: 15px;
+    }
+
 `

@@ -1,5 +1,6 @@
 import { DropDown } from "components/dropdown";
 import { useState } from "react";
+import { HiOutlineChevronDown } from "react-icons/hi";
 import { useHistory } from "react-router-dom";
 import { IMenuOption } from "./index.d";
 import { $MenuOption } from "./styles";
@@ -16,16 +17,17 @@ export const Option = (props: IMenuOption) => {
     const handleClick = () => setOpen(!open);
 
     const OptionComponent = () => (
-        <$MenuOption disabled={props.disabled} onClick={props?.submenu ? handleClick : goToOption}>
-            {props.icon}
-            <p>{props.label}</p>
+        <$MenuOption className={props.disabled ? 'disabled' : ''} onClick={props?.submenu ? handleClick : goToOption}>
+            <p>{props.label}{!!props?.submenu && <HiOutlineChevronDown />}</p>
         </$MenuOption>
     )
 
     return (
         <>
             {props?.submenu ?
-                <DropDown component={<OptionComponent />} options={props.submenu} open={open} key={props.label} />
+                <$MenuOption>
+                    <DropDown component={<OptionComponent />} options={props.submenu} open={open} key={props.label} />
+                </$MenuOption>
                 :
                 <OptionComponent key={props.label} />
             }
