@@ -12,8 +12,8 @@ export const ViewCourse = () => {
     const [course, setCourse] = useState<ICourse>();
 
     useEffect(() => {
-        const selectedCourse = coursesMock.filter((course) => course.id === id)[0];
-        setCourse(selectedCourse);
+        // const selectedCourse: ICourse = coursesMock.filter((course) => course.id === id)[0];
+        // setCourse(selectedCourse);
     }, [id])
 
     return (
