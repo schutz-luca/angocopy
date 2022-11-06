@@ -1,7 +1,7 @@
 {
   "name": "web",
   "version": "0.0.0",
-  "homepage": ".",
+  "homepage": "https://angocursos-front-copy-31brq3z2e-schutz-luca.vercel.app",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
