@@ -2,7 +2,7 @@
  * IMPORTS
  */
 import { useSelector } from "react-redux";
-import { BrowserRouter, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { selectUser } from "features/user/selectors";
 import { MainLayout } from "layouts/MainLayout";
@@ -30,25 +30,27 @@ const Routes = () => {
                 animate="animate"
                 exit="exit"
             >
-                <MainLayout>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/categorias" exact component={Courses} />
-                    <Route path="/categorias/:id" exact component={Category} />
-                    <Route path="/cursos/:id" exact component={ViewCourse} />
-                    <Route path="/planos" exact component={Plans} />
-                    {signed ?
-                        <>
-                            <Route path="/cursos-comprados" exact component={PurchasedCourses} />
+                <Switch>
+                    <MainLayout>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/categorias" exact component={Courses} />
+                        <Route path="/categorias/:id" exact component={Category} />
+                        <Route path="/cursos/:id" exact component={ViewCourse} />
+                        <Route path="/planos" exact component={Plans} />
+                        {signed ?
+                            <>
+                                <Route path="/cursos-comprados" exact component={PurchasedCourses} />
 
-                        </>
-                        :
-                        <>
-                            <Route path="/cursos-comprados/:id" exact component={ViewPurchasedCourse} />
-                            <Route path="/login" exact component={Login} />
-                            <Route path="/cadastro" exact component={Join} />
-                        </>
-                    }
-                </MainLayout>
+                            </>
+                            :
+                            <>
+                                <Route path="/cursos-comprados/:id" exact component={ViewPurchasedCourse} />
+                                <Route path="/login" exact component={Login} />
+                                <Route path="/cadastro" exact component={Join} />
+                            </>
+                        }
+                    </MainLayout>
+                </Switch>
             </motion.div>
         </AnimatePresence>
     )
